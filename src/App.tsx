@@ -48,9 +48,9 @@ const Home = () => {
 		<div className="container mx-auto min-h-screen space-y-16 px-4 py-12">
 			{/* Hero Section */}
 			<header className="space-y-1 text-center">
-				<h1 className="text-6xl font-bold md:text-7xl lg:text-8xl">Octant v2</h1>
+				<h1 className="text-6xl font-bold md:text-7xl lg:text-8xl">OpenLeaf</h1>
 				<h2 className="text-muted-foreground text-3xl font-bold md:text-4xl lg:text-5xl">
-					Hackathon Boilerplate
+					Your Gateway to Protocol Transparency
 				</h2>
 			</header>
 
@@ -92,26 +92,32 @@ const Home = () => {
 						<h3 className="text-lg font-semibold">
 							Morpho Compounder Strategy Factory
 						</h3>
-						<p className="text-sm text-muted-foreground">
+						<p className="text-muted-foreground text-sm">
 							Factory contract for creating Morpho yield compounding strategies
 						</p>
-						<code className="block text-xs">src/abis/MorphoCompounderStrategyFactory.json</code>
+						<code className="block text-xs">
+							src/abis/MorphoCompounderStrategyFactory.json
+						</code>
 					</Card>
 
 					<Card className="space-y-4 p-6">
 						<h3 className="text-lg font-semibold">Sky Compounder Strategy Factory</h3>
-						<p className="text-sm text-muted-foreground">
+						<p className="text-muted-foreground text-sm">
 							Factory contract for creating Sky protocol compounding strategies
 						</p>
-						<code className="block text-xs">src/abis/SkyCompounderStrategyFactory.json</code>
+						<code className="block text-xs">
+							src/abis/SkyCompounderStrategyFactory.json
+						</code>
 					</Card>
 
 					<Card className="space-y-4 p-6">
 						<h3 className="text-lg font-semibold">Yield Donating Tokenized Strategy</h3>
-						<p className="text-sm text-muted-foreground">
+						<p className="text-muted-foreground text-sm">
 							Strategy contract for automated yield donations with tokenization
 						</p>
-						<code className="block text-xs">src/abis/YieldDonatingTokenizedStrategy.json</code>
+						<code className="block text-xs">
+							src/abis/YieldDonatingTokenizedStrategy.json
+						</code>
 					</Card>
 				</div>
 
@@ -119,12 +125,14 @@ const Home = () => {
 					<Card className="p-6">
 						<h4 className="mb-3 text-lg font-semibold">How to Use ABIs</h4>
 						<div className="space-y-2 text-left text-sm">
-							<p className="text-muted-foreground">Import the ABI in your component:</p>
-							<code className="block rounded-md bg-muted p-3">
+							<p className="text-muted-foreground">
+								Import the ABI in your component:
+							</p>
+							<code className="bg-muted block rounded-md p-3">
 								{`import MorphoCompounderStrategyFactoryABI from '@/abis/MorphoCompounderStrategyFactory.json';`}
 							</code>
-							<p className="mt-3 text-muted-foreground">Use with wagmi or viem:</p>
-							<code className="block rounded-md bg-muted p-3">
+							<p className="text-muted-foreground mt-3">Use with wagmi or viem:</p>
+							<code className="bg-muted block rounded-md p-3">
 								{`const { data } = useReadContract({
   address: '0x...',
   abi: MorphoCompounderStrategyFactoryABI,
@@ -140,7 +148,7 @@ const Home = () => {
 
 			{/* Available Components Grid */}
 			<section className="space-y-8">
-				<h2 className="text-center text-5xl font-bold ">Components</h2>
+				<h2 className="text-center text-5xl font-bold">Components</h2>
 				<p className="text-muted-foreground text-center">
 					All components are ready to use. Copy the code and start building.
 				</p>
