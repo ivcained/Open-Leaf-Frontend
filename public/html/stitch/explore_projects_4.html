@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Task Details</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6366F1", // Indigo-500
+                        "background-light": "#F9FAFB", // Gray-50
+                        "background-dark": "#111827", // Gray-900
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937", // Gray-800
+                        "border-light": "#E5E7EB", // Gray-200
+                        "border-dark": "#374151", // Gray-700
+                        "text-light-primary": "#111827", // Gray-900
+                        "text-dark-primary": "#F9FAFB", // Gray-50
+                        "text-light-secondary": "#6B7280", // Gray-500
+                        "text-dark-secondary": "#9CA3AF", // Gray-400
+                        "success-light": "#10B981", // Emerald-500
+                        "success-dark": "#34D399", // Emerald-400
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem", // 12px
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-dark text-text-dark-primary">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-10 bg-background-dark/80 backdrop-blur-sm border-b border-border-dark">
+<nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+<div class="flex items-center space-x-4">
+<a class="text-text-dark-secondary hover:text-text-dark-primary" href="#">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</a>
+<a class="text-lg font-bold text-text-dark-primary" href="#">Project Name</a>
+</div>
+<div class="flex items-center space-x-2 sm:space-x-4 text-sm font-medium">
+<a class="hidden sm:block text-text-dark-secondary hover:text-text-dark-primary transition-colors" href="#">Add Your Project</a>
+<a class="hidden sm:block text-text-dark-secondary hover:text-text-dark-primary transition-colors" href="#">Docs</a>
+<button class="bg-primary text-white font-semibold px-4 py-2 rounded-lg text-xs sm:text-sm hover:opacity-90 transition-opacity">
+                    Connect
+                </button>
+</div>
+</nav>
+</header>
+<main class="container mx-auto p-4 sm:p-6 flex-grow">
+<div class="space-y-6">
+<div class="bg-card-dark rounded-lg border border-border-dark p-5">
+<h1 class="text-2xl font-bold text-text-dark-primary mb-2">Create a video for Ethereum Foundation</h1>
+<p class="text-sm text-text-dark-secondary">Posted by Ethereum Foundation</p>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-5">
+<h2 class="text-lg font-semibold text-text-dark-primary mb-3">Task Description</h2>
+<div class="prose prose-invert prose-sm text-text-dark-secondary max-w-none">
+<p>We're looking for a talented video creator to produce a compelling 2-3 minute video that explains the core concepts of the Ethereum Foundation's latest grant program. The video should be engaging, informative, and accessible to a wide audience, from developers to newcomers in the crypto space.</p>
+<p>Key points to cover:</p>
+<ul>
+<li>The mission of the Ethereum Foundation.</li>
+<li>Goals of the new grant program.</li>
+<li>Who is eligible to apply.</li>
+<li>How to apply and key deadlines.</li>
+</ul>
+<p>The final deliverable should be a high-resolution video file (1080p or 4K) with professional-quality audio and graphics. Feel free to use existing branding assets, which will be provided upon task acceptance.</p>
+</div>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-5">
+<h2 class="text-lg font-semibold text-text-dark-primary mb-3">Payment Details</h2>
+<div class="flex justify-between items-center">
+<span class="text-text-dark-secondary">Reward</span>
+<span class="font-bold text-success-dark text-lg">1.5 ETH</span>
+</div>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-5">
+<h2 class="text-lg font-semibold text-text-dark-primary mb-3">Submit Your Work</h2>
+<div>
+<label class="block text-sm font-medium text-text-dark-secondary mb-2" for="submission-link">Simple github link as submission</label>
+<input class="w-full bg-background-dark border border-border-dark rounded-lg px-3 py-2 text-text-dark-primary focus:ring-2 focus:ring-primary focus:border-primary placeholder:text-gray-500" id="submission-link" name="submission-link" placeholder="https://github.com/..." type="url"/>
+</div>
+</div>
+</div>
+</main>
+<footer class="sticky bottom-0 bg-background-dark/80 backdrop-blur-sm border-t border-border-dark p-4">
+<div class="container mx-auto">
+<button class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">
+                Submit Task
+            </button>
+</div>
+</footer>
+</div>
+
+</body></html>

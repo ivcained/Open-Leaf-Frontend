@@ -60,7 +60,8 @@ const Home = () => {
 			<section className="space-y-8">
 				<div className="mx-auto max-w-2xl">
 					<Card className="space-y-4 p-8 text-center">
-						<h3 className="text-5xl font-semibold">Getting Started</h3>
+						Explore Projects
+						<h3 className="text-5xl font-semibold">Explore Projects</h3>
 						<p className="text-muted-foreground">
 							Introduction to Octant v2 architecture and core concepts
 						</p>

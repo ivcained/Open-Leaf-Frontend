@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Submission Review</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4F46E5",
+            "background-light": "#F9FAFB",
+            "background-dark": "#111827",
+            "foreground-light": "#ffffff",
+            "foreground-dark": "#1F2937",
+            "text-light": "#111827",
+            "text-dark": "#F9FAFB",
+            "text-secondary-light": "#6B7280",
+            "text-secondary-dark": "#9CA3AF",
+            "border-light": "#E5E7EB",
+            "border-dark": "#374151",
+            "success": "#22C55E",
+            "danger": "#EF4444",
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.75rem",
+          },
+        },
+      },
+    };
+  </script>
+<style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="flex flex-col min-h-screen">
+<header class="p-4 border-b border-border-light dark:border-border-dark bg-foreground-light dark:bg-foreground-dark shadow-sm">
+<div class="max-w-md mx-auto flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<span class="material-icons-outlined text-text-light dark:text-text-dark">arrow_back_ios_new</span>
+<h1 class="text-xl font-bold text-text-light dark:text-text-dark">Protocol</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+</div>
+</header>
+<main class="flex-grow p-6">
+<div class="max-w-md mx-auto space-y-8">
+<div>
+<h2 class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1">Task Subject</h2>
+<p class="text-lg font-semibold text-text-light dark:text-text-dark">Create a new smart contract for yield distribution</p>
+</div>
+<div>
+<h3 class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1">User</h3>
+<div class="flex items-center space-x-3">
+<img alt="User avatar" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCML8iiEtUbxZMH0_GlejxGZ0V3yfgW8zqCWLfMpvOTKWlD4GL5CxPDdJWo5Ctvg21Iko-nQXBtPa9vhZTjiN7X4LPI4UHlQc5NtaYQokLAO1QMBUNBArYv7j2GUDh2bqzENqUQ6I-dnr2r6V6tKz0Oq0YUI1PFg59NQm8_jVGfmPKtPWI4Frjo9lTekPMgCgH3N8WJOtQQSYoJurebj9l_hFbhf93NaDOeDlpXnaP_IQD5emET6gPLpsthV7WScWXtxQoq3W-gEio"/>
+<span class="font-medium text-text-light dark:text-text-dark">Alex Doe</span>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1">Submission link:</h3>
+<a class="flex items-center text-primary font-medium hover:underline" href="#">
+<span>https://github.com/example/repo/pull/123</span>
+<span class="material-icons-outlined text-base ml-1">open_in_new</span>
+</a>
+</div>
+<div>
+<h3 class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-2">Submission Information:</h3>
+<div class="bg-foreground-light dark:bg-foreground-dark border border-border-light dark:border-border-dark rounded-DEFAULT p-4">
+<p class="text-text-light dark:text-text-dark leading-relaxed">
+              This submission includes the completed smart contract as requested. I've followed all the guidelines and included extensive testing. Please review the attached documentation for setup and deployment instructions. Looking forward to your feedback.
+            </p>
+</div>
+</div>
+</div>
+</main>
+<footer class="p-4 bg-foreground-light dark:bg-foreground-dark border-t border-border-light dark:border-border-dark sticky bottom-0">
+<div class="max-w-md mx-auto grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center w-full bg-danger/10 dark:bg-danger/20 text-danger font-bold py-3 px-4 rounded-DEFAULT hover:bg-danger/20 dark:hover:bg-danger/30 transition-colors">
+<span class="material-icons-outlined mr-2">close</span>
+          Reject
+        </button>
+<button class="flex items-center justify-center w-full bg-success/10 dark:bg-success/20 text-success font-bold py-3 px-4 rounded-DEFAULT hover:bg-success/20 dark:hover:bg-success/30 transition-colors">
+<span class="material-icons-outlined mr-2">check</span>
+          Approve
+        </button>
+</div>
+</footer>
+</div>
+
+</body></html>

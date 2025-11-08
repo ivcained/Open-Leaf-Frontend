@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Details</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6366F1", // Indigo-500
+                        "background-light": "#F9FAFB", // Gray-50
+                        "background-dark": "#111827", // Gray-900
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937", // Gray-800
+                        "border-light": "#E5E7EB", // Gray-200
+                        "border-dark": "#374151", // Gray-700
+                        "text-light-primary": "#111827", // Gray-900
+                        "text-dark-primary": "#F9FAFB", // Gray-50
+                        "text-light-secondary": "#6B7280", // Gray-500
+                        "text-dark-secondary": "#9CA3AF", // Gray-400
+                        "success-light": "#10B981", // Emerald-500
+                        "success-dark": "#34D399", // Emerald-400
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem", // 12px
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-dark text-text-dark-primary">
+<div class="min-h-screen" id="app">
+<header class="sticky top-0 z-10 bg-background-dark/80 backdrop-blur-sm border-b border-border-dark">
+<nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+<div class="flex items-center space-x-4">
+<a class="flex items-center text-text-dark-secondary hover:text-text-dark-primary transition-colors" href="#">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</a>
+<a class="text-lg font-bold text-text-dark-primary" href="#">Protocol</a>
+</div>
+<div class="flex items-center space-x-2 sm:space-x-4 text-sm font-medium">
+<a class="hidden sm:block text-text-dark-secondary hover:text-text-dark-primary transition-colors" href="#">Add Your Project</a>
+<a class="hidden sm:block text-text-dark-secondary hover:text-text-dark-primary transition-colors" href="#">Docs</a>
+<button class="bg-primary text-white font-semibold px-4 py-2 rounded-lg text-xs sm:text-sm hover:opacity-90 transition-opacity">
+                        Connect
+                    </button>
+</div>
+</nav>
+</header>
+<main class="container mx-auto p-4 sm:p-6">
+<div class="flex items-center mb-6">
+<img alt="Ethereum logo" class="w-12 h-12 mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE6d8vdsXgMQYLpsC50KT-K9_k_V1T_ueBKiEvUSw0lbYejtdXURiOJxnOM4VSIaqir40BsiTacs3hLGYsVNoqsIzCxaD_aWkz-ARt6kTVu2zaZ-C5pgDyY-Xinq33Xk0Og1eWn_fuVHiRadhNiNRxobGKu_GUo5nAx6uxDErCg4NZQqV5yR54lEAfJOCQdaPjpYUbtTMLHRkElo7q3Z2_ZlBzJgr3v2YR-PLBoTGfV0l5hdluMBi4xCdV7xRUGk8C0lOUOPGBs88"/>
+<div>
+<h1 class="text-2xl sm:text-3xl font-bold text-text-dark-primary">Ethereum Foundation</h1>
+<p class="text-text-dark-secondary">Advancing the Ethereum ecosystem.</p>
+</div>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-6 mb-6">
+<h2 class="text-lg font-semibold text-text-dark-primary mb-4">Total Funds</h2>
+<div class="flex flex-col items-center">
+<div class="relative w-40 h-40 mb-4">
+<svg class="w-full h-full" viewBox="0 0 36 36">
+<path class="text-border-dark" d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary" d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="75, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="text-2xl font-bold">12,450</span>
+<span class="text-sm text-text-dark-secondary">ETH</span>
+</div>
+</div>
+<div class="text-center">
+<p class="text-text-dark-secondary text-sm">Yield Earned</p>
+<p class="font-semibold text-success-dark text-lg">+312.5 ETH</p>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<h2 class="text-lg font-semibold text-text-dark-primary mb-4">Open Tasks</h2>
+<div class="space-y-3">
+<div class="bg-card-dark rounded-lg border border-border-dark p-4 flex justify-between items-center">
+<div>
+<p class="font-medium text-text-dark-primary">Improve documentation for Layer 2 scaling</p>
+<p class="text-xs text-text-dark-secondary">Reward: 1.5 ETH</p>
+</div>
+<span class="material-symbols-outlined text-text-dark-secondary">chevron_right</span>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-4 flex justify-between items-center">
+<div>
+<p class="font-medium text-text-dark-primary">Audit new smart contract proposal</p>
+<p class="text-xs text-text-dark-secondary">Reward: 5 ETH</p>
+</div>
+<span class="material-symbols-outlined text-text-dark-secondary">chevron_right</span>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-4 flex justify-between items-center">
+<div>
+<p class="font-medium text-text-dark-primary">Develop community analytics dashboard</p>
+<p class="text-xs text-text-dark-secondary">Reward: 3 ETH</p>
+</div>
+<span class="material-symbols-outlined text-text-dark-secondary">chevron_right</span>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-lg font-semibold text-text-dark-primary mb-4">Project Spendings</h2>
+<div class="bg-card-dark rounded-lg border border-border-dark overflow-hidden">
+<div class="divide-y divide-border-dark">
+<div class="p-4">
+<div class="flex justify-between items-center mb-1">
+<p class="font-medium text-text-dark-primary">Grant for ZK-rollup research</p>
+<p class="font-semibold text-text-dark-primary">-50 ETH</p>
+</div>
+<div class="flex justify-between items-center text-xs text-text-dark-secondary">
+<span>Tx: 0x123...abc</span>
+<span class="flex items-center">2 days ago <span class="material-symbols-outlined text-sm ml-1">open_in_new</span></span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-center mb-1">
+<p class="font-medium text-text-dark-primary">Developer tooling initiative</p>
+<p class="font-semibold text-text-dark-primary">-25 ETH</p>
+</div>
+<div class="flex justify-between items-center text-xs text-text-dark-secondary">
+<span>Tx: 0x456...def</span>
+<span class="flex items-center">5 days ago <span class="material-symbols-outlined text-sm ml-1">open_in_new</span></span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-center mb-1">
+<p class="font-medium text-text-dark-primary">Community event sponsorship</p>
+<p class="font-semibold text-text-dark-primary">-10 ETH</p>
+</div>
+<div class="flex justify-between items-center text-xs text-text-dark-secondary">
+<span>Tx: 0x789...ghi</span>
+<span class="flex items-center">1 week ago <span class="material-symbols-outlined text-sm ml-1">open_in_new</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

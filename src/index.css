@@ -1,22 +1,41 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
+@import 'tailwindcss';
 
-  color-scheme: dark;
-  color: rgba(254, 253, 244, 0.8);
-  background-color: #0d0d0d;
+@plugin '@tailwindcss/forms';
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme {
+	/* Colors */
+	--color-primary: #6366f1;
+	--color-background-light: #f9fafb;
+	--color-background-dark: #111827;
+	--color-card-light: #ffffff;
+	--color-card-dark: #1f2937;
+	--color-border-light: #e5e7eb;
+	--color-border-dark: #374151;
+	--color-text-light-primary: #111827;
+	--color-text-dark-primary: #f9fafb;
+	--color-text-light-secondary: #6b7280;
+	--color-text-dark-secondary: #9ca3af;
+	--color-success-light: #10b981;
+	--color-success-dark: #34d399;
+	--color-status-approved: #10b981;
+	--color-status-rejected: #ef4444;
+	--color-status-open: #f59e0b;
+
+	/* Font Family */
+	--font-display: Inter, sans-serif;
+
+	/* Border Radius */
+	--radius: 0.75rem;
+	--radius-sm: 0.5rem;
+	--radius-full: 9999px;
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #0d0d0d;
-  color: rgba(254, 253, 244, 0.8);
+	margin: 0;
+	font-family: var(--font-display);
+	background-color: var(--color-background-dark);
+	color: var(--color-text-dark-primary);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	min-height: 100vh;
 }

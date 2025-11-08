@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6366F1", // Indigo-500
+                        "background-light": "#F9FAFB", // Gray-50
+                        "background-dark": "#111827", // Gray-900
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937", // Gray-800
+                        "border-light": "#E5E7EB", // Gray-200
+                        "border-dark": "#374151", // Gray-700
+                        "text-light-primary": "#111827", // Gray-900
+                        "text-dark-primary": "#F9FAFB", // Gray-50
+                        "text-light-secondary": "#6B7280", // Gray-500
+                        "text-dark-secondary": "#9CA3AF", // Gray-400
+                        "success": "#10B981", // Emerald-500
+                        "warning": "#F59E0B", // Amber-500
+                        "danger": "#EF4444", // Red-500
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem", // 12px
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-dark text-text-dark-primary">
+<div class="min-h-screen" id="app">
+<header class="sticky top-0 z-10 bg-background-dark/80 backdrop-blur-sm border-b border-border-dark">
+<nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+<div class="flex items-center space-x-4">
+<a class="text-text-dark-secondary hover:text-text-dark-primary transition-colors text-sm font-medium" href="#">Projects</a>
+<a class="text-text-dark-secondary hover:text-text-dark-primary transition-colors text-sm font-medium" href="#">Add Project</a>
+<a class="text-text-dark-secondary hover:text-text-dark-primary transition-colors text-sm font-medium" href="#">Docs</a>
+</div>
+<button class="bg-primary text-white font-semibold px-4 py-2 rounded-lg text-xs sm:text-sm hover:opacity-90 transition-opacity">
+                Connect
+            </button>
+</nav>
+</header>
+<main class="container mx-auto p-4 sm:p-6">
+<div class="flex justify-between items-center mb-6">
+<h1 class="text-2xl sm:text-3xl font-bold">My Profile</h1>
+<button class="text-text-dark-secondary hover:text-text-dark-primary">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="text-center mb-8">
+<img alt="User Avatar" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUvB5B4OCqgE9cuKon5bpbJn1DUGoagYgBqjgUoFQaRato_n4HJN780u1RyrtNuuyfXU1-SEgSKb6ehyNps8g3gmFJJ9rpfICCr_tPHGJQnApraEBBEqMfJ0QCsjw11C6Gepa4zft57oCP15VihGdOyhqTNxmMjBaC0eunJ80a6n5CaqaAXF0wlBoyGk0u7tIekeRp96pSYT4UW4uSNjWuMVSP_AT_-fFXpJXTkQ6dKW9XI0zZiNs42pyet3rJdjttlF0hVBj_BN0"/>
+<h2 class="text-xl font-bold">Alex Doe</h2>
+<p class="text-text-dark-secondary text-sm">0xAbC...123</p>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-4 shadow-sm mb-6">
+<h3 class="text-lg font-semibold mb-2">My Earnings</h3>
+<div class="flex items-baseline">
+<p class="text-3xl font-bold text-success">1.25 ETH</p>
+<p class="text-text-dark-secondary ml-2">~ $4,200.50 USD</p>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">My Submitted Tasks</h3>
+<div class="space-y-4">
+<div class="bg-card-dark rounded-lg border border-border-dark p-4 shadow-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-semibold">Optimize frontend assets</p>
+<p class="text-sm text-text-dark-secondary">Project: Ethereum Foundation</p>
+</div>
+<div class="flex items-center text-xs font-medium px-2 py-1 rounded-full bg-success/10 text-success">
+<span class="w-2 h-2 rounded-full bg-success mr-2"></span>
+                            Approved
+                        </div>
+</div>
+<div class="mt-2 text-right text-sm font-semibold text-success">+ 0.5 ETH</div>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-4 shadow-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-semibold">Write documentation for API</p>
+<p class="text-sm text-text-dark-secondary">Project: Golem Foundation</p>
+</div>
+<div class="flex items-center text-xs font-medium px-2 py-1 rounded-full bg-warning/10 text-warning">
+<span class="w-2 h-2 rounded-full bg-warning mr-2"></span>
+                             Pending
+                         </div>
+</div>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-4 shadow-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-semibold">Translate marketing materials</p>
+<p class="text-sm text-text-dark-secondary">Project: Arbitrum Foundation</p>
+</div>
+<div class="flex items-center text-xs font-medium px-2 py-1 rounded-full bg-danger/10 text-danger">
+<span class="w-2 h-2 rounded-full bg-danger mr-2"></span>
+                             Rejected
+                         </div>
+</div>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-4 shadow-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-semibold">UI/UX design review</p>
+<p class="text-sm text-text-dark-secondary">Project: Ethereum Foundation</p>
+</div>
+<div class="flex items-center text-xs font-medium px-2 py-1 rounded-full bg-success/10 text-success">
+<span class="w-2 h-2 rounded-full bg-success mr-2"></span>
+                            Approved
+                        </div>
+</div>
+<div class="mt-2 text-right text-sm font-semibold text-success">+ 0.75 ETH</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

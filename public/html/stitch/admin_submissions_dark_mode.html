@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Page - Submissions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4F46E5",
+            "background-light": "#F9FAFB",
+            "background-dark": "#111827",
+            "card-light": "#FFFFFF",
+            "card-dark": "#1F2937",
+            "text-light": "#111827",
+            "text-dark": "#E5E7EB",
+            "text-muted-light": "#6B7280",
+            "text-muted-dark": "#9CA3AF",
+            "border-light": "#E5E7EB",
+            "border-dark": "#374151",
+            "status-approved": "#10B981",
+            "status-rejected": "#EF4444",
+            "status-open": "#F59E0B"
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+          },
+        },
+      },
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased">
+<div class="max-w-md mx-auto min-h-screen p-4">
+<header class="flex items-center justify-between pb-4">
+<h1 class="text-xl font-bold">Admin Page</h1>
+<button class="text-text-muted-light dark:text-text-muted-dark">
+<span class="material-icons-outlined">
+          notifications
+        </span>
+</button>
+</header>
+<section class="mb-6">
+<div class="bg-card-light dark:bg-card-dark rounded-lg p-4 flex items-center justify-between border border-border-light dark:border-border-dark">
+<div class="flex items-center space-x-3">
+<div class="bg-primary/10 p-2 rounded-full">
+<span class="material-icons-outlined text-primary">shield</span>
+</div>
+<div>
+<h2 class="font-semibold text-lg">Protocol</h2>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Manage submissions</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-lg font-semibold mb-4">Submissions</h2>
+<div class="space-y-4">
+<div class="bg-card-light dark:bg-card-dark rounded-lg p-4 border border-border-light dark:border-border-dark">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="font-medium">My beautiful smart contract</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">by UserA</p>
+</div>
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-status-approved/10 text-status-approved">
+<span class="w-2 h-2 rounded-full bg-status-approved"></span>
+<p class="text-xs font-medium">Approved</p>
+</div>
+</div>
+<div class="text-sm text-text-muted-light dark:text-text-muted-dark flex items-center justify-between">
+<p>01-01-2025</p>
+<a class="flex items-center space-x-1 text-primary font-medium hover:underline" href="#">
+<span>Github link</span>
+<span class="material-icons-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-lg p-4 border border-border-light dark:border-border-dark">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="font-medium">Another awesome feature</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">by UserB</p>
+</div>
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-status-rejected/10 text-status-rejected">
+<span class="w-2 h-2 rounded-full bg-status-rejected"></span>
+<p class="text-xs font-medium">Rejected</p>
+</div>
+</div>
+<div class="text-sm text-text-muted-light dark:text-text-muted-dark flex items-center justify-between">
+<p>01-01-2025</p>
+<a class="flex items-center space-x-1 text-primary font-medium hover:underline" href="#">
+<span>Gitlab link</span>
+<span class="material-icons-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<a class="block bg-card-light dark:bg-card-dark rounded-lg p-4 border border-border-light dark:border-border-dark hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200" href="#submission-detail">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="font-medium">UI/UX Redesign Proposal</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">by UserC</p>
+</div>
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-status-open/10 text-status-open">
+<span class="w-2 h-2 rounded-full bg-status-open"></span>
+<p class="text-xs font-medium">Open</p>
+</div>
+</div>
+<div class="text-sm text-text-muted-light dark:text-text-muted-dark flex items-center justify-between">
+<p>01-01-2025</p>
+<div class="flex items-center space-x-1 text-primary font-medium">
+<span>Figma link</span>
+<span class="material-icons-outlined text-sm">open_in_new</span>
+</div>
+</div>
+</a>
+</div>
+</section>
+<div class="mt-12 pt-8 border-t border-border-light dark:border-border-dark" id="submission-detail">
+<h2 class="text-lg font-semibold mb-6">Review Submission</h2>
+<div class="space-y-4">
+<div>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-1">Task Subject</p>
+<p class="font-medium">UI/UX Redesign Proposal</p>
+</div>
+<div>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-1">User</p>
+<p class="font-medium">UserC</p>
+</div>
+<div>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-1">Submission link</p>
+<a class="flex items-center space-x-1 text-primary font-medium hover:underline" href="#">
+<span>figma.com/file/xyz...</span>
+<span class="material-icons-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<div>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-1">Submission Information</p>
+<p class="text-text-light dark:text-text-dark text-base leading-relaxed bg-gray-100 dark:bg-gray-800 p-3 rounded-md">
+                    Here's the new design proposal for the platform. I've focused on improving the user flow for project creation and made the dashboard more intuitive. All assets are included in the Figma file.
+                </p>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-2 gap-4">
+<button class="w-full py-3 px-4 bg-status-approved text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition-colors">
+                Approve
+            </button>
+<button class="w-full py-3 px-4 bg-status-rejected text-white font-semibold rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75 transition-colors">
+                Reject
+            </button>
+</div>
+</div>
+</div>
+
+</body></html>

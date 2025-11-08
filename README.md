@@ -1,3 +1,9 @@
+#OpenLeaf
+
+Create a platform which allows transparency of  project funds while encouraging  incentives to the community which let the project grow in a transparent way.
+
+By encouraging projects  to earn yield on their deposits, they can grow community/developer initiative while simultaneously showing transparency and gaining trust. 
+
 # Octant v2 Hackathon dApp Boilerplate
 
 A production-ready React boilerplate optimized for hackathon development. Get started building your dApp in minutes with modern tooling and essential libraries pre-configured.

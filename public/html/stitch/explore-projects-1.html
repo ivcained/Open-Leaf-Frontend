@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Projects</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6366F1", // Indigo-500
+                        "background-light": "#F9FAFB", // Gray-50
+                        "background-dark": "#111827", // Gray-900
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937", // Gray-800
+                        "border-light": "#E5E7EB", // Gray-200
+                        "border-dark": "#374151", // Gray-700
+                        "text-light-primary": "#111827", // Gray-900
+                        "text-dark-primary": "#F9FAFB", // Gray-50
+                        "text-light-secondary": "#6B7280", // Gray-500
+                        "text-dark-secondary": "#9CA3AF", // Gray-400
+                        "success-light": "#10B981", // Emerald-500
+                        "success-dark": "#34D399", // Emerald-400
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem", // 12px
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #111827;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-dark text-text-dark-primary">
+<div class="min-h-screen" id="app">
+<header class="sticky top-0 z-10 bg-background-dark/80 backdrop-blur-sm border-b border-border-dark">
+<nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a class="text-lg font-bold text-text-dark-primary" href="#">Protocol</a>
+<div class="flex items-center space-x-2 sm:space-x-4 text-sm font-medium">
+<a class="hidden sm:block text-text-dark-secondary hover:text-text-dark-primary transition-colors" href="#">Add Your Project</a>
+<a class="hidden sm:block text-text-dark-secondary hover:text-text-dark-primary transition-colors" href="#">Docs</a>
+<button class="bg-primary text-white font-semibold px-4 py-2 rounded-lg text-xs sm:text-sm hover:opacity-90 transition-opacity">
+                    Connect
+                </button>
+</div>
+</nav>
+</header>
+<main class="container mx-auto p-4 sm:p-6">
+<h1 class="text-2xl sm:text-3xl font-bold text-text-dark-primary mb-6">Explore Projects</h1>
+<div class="space-y-4">
+<div class="bg-card-dark rounded-lg border border-border-dark p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-start">
+<img alt="Ethereum logo" class="w-10 h-10 mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE6d8vdsXgMQYLpsC50KT-K9_k_V1T_ueBKiEvUSw0lbYejtdXURiOJxnOM4VSIaqir40BsiTacs3hLGYsVNoqsIzCxaD_aWkz-ARt6kTVu2zaZ-C5pgDyY-Xinq33Xk0Og1eWn_fuVHiRadhNiNRxobGKu_GUo5nAx6uxDErCg4NZQqV5yR54lEAfJOCQdaPjpYUbtTMLHRkElo7q3Z2_ZlBzJgr3v2YR-PLBoTGfV0l5hdluMBi4xCdV7xRUGk8C0lOUOPGBs88"/>
+<div>
+<h2 class="font-bold text-lg text-text-dark-primary">Ethereum Foundation</h2>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 text-left">
+<div>
+<p class="text-xs text-text-dark-secondary mb-1">Current Funds</p>
+<p class="font-semibold text-text-dark-primary">12,450 ETH</p>
+</div>
+<div>
+<p class="text-xs text-text-dark-secondary mb-1">Yield Earned</p>
+<p class="font-semibold text-success-dark">+312.5 ETH</p>
+</div>
+<div>
+<p class="text-xs text-text-dark-secondary mb-1">Open Tasks</p>
+<p class="font-semibold text-text-dark-primary">8</p>
+</div>
+</div>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-start">
+<img alt="Golem logo" class="w-10 h-10 mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADIjwfKVjC7KOQzrlmuDJbPYIFcDYMaqOOogzlwMrU1qkkjAgQqbgj87YmNx7s5VrxqYhfx5gE2hpRoraICKhwt_5Y4wU1Cpvfk9uZcT_ygqnRNthBJOWqDZEubnhQqg6zKnCXGVJ15wKJNGZr8OK7lLpEbmRy6N7a5qJ2hucsPD9WPHrRSkNGC1kNbsoQiUhFf-aKOoO2MSWYKG0lTgAhmTzH8NIyarY9Ju6zPNxgRLJ0T5X9Ja29PgIuk8cjz1r5olBf6oiMHoU"/>
+<div>
+<h2 class="font-bold text-lg text-text-dark-primary">Golem Foundation</h2>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 text-left">
+<div>
+<p class="text-xs text-text-dark-secondary mb-1">Current Funds</p>
+<p class="font-semibold text-text-dark-primary">5,800 ETH</p>
+</div>
+<div>
+<p class="text-xs text-text-dark-secondary mb-1">Yield Earned</p>
+<p class="font-semibold text-success-dark">+98.2 ETH</p>
+</div>
+<div>
+<p class="text-xs text-text-dark-secondary mb-1">Open Tasks</p>
+<p class="font-semibold text-text-dark-primary">12</p>
+</div>
+</div>
+</div>
+<div class="bg-card-dark rounded-lg border border-border-dark p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-start">
+<img alt="Arbitrum logo" class="w-10 h-10 mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaxKLwBGrQ4Bd75P_N1R6EG6HeDGqUIfhyCPXDYRwOZcmkiFP4cbNoraTX_VktRVFDJvMytxiPceKFzRpub-1WSnXO4QGQrBVMJ8Tdjo2KTzHuLNimzU6baYSAjip0yuR_GG8iqpVsu_ZAFdvS2c81pzEdrhDUxM2DkkJdFtgvtlvv9r4WUIizAf7xzFhNGLADRe9xMC8QwbEc5CTIEDOd1IS7gssEZqGjEO0_vaX9Yl-NgQlVZJUFo5l3xcqw_xxMVVyPcUnnU74"/>
+<div>
+<h2 class="font-bold text-lg text-text-dark-primary">Arbitrum Foundation</h2>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 text-left">
+<div>
+<p class="text-xs text-text-dark-secondary mb-1">Current Funds</p>
+<p class="font-semibold text-text-dark-primary">9,210 ETH</p>
+</div>
+<div>
+<p class="text-xs text-text-dark-secondary mb-1">Yield Earned</p>
+<p class="font-semibold text-success-dark">+204.7 ETH</p>
+</div>
+<div>
+<p class="text-xs text-text-dark-secondary mb-1">Open Tasks</p>
+<p class="font-semibold text-text-dark-primary">5</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-6 right-6 sm:hidden">
+<button class="bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 28px;">add</span>
+<span class="sr-only">Add Your Project</span>
+</button>
+</div>
+</div>
+
+</body></html>

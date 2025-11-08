@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Your Project</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6366F1", // Indigo-500
+                        "background-light": "#F9FAFB", // Gray-50
+                        "background-dark": "#111827", // Gray-900
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937", // Gray-800
+                        "border-light": "#E5E7EB", // Gray-200
+                        "border-dark": "#374151", // Gray-700
+                        "text-light-primary": "#111827", // Gray-900
+                        "text-dark-primary": "#F9FAFB", // Gray-50
+                        "text-light-secondary": "#6B7280", // Gray-500
+                        "text-dark-secondary": "#9CA3AF", // Gray-400
+                        "success-light": "#10B981", // Emerald-500
+                        "success-dark": "#34D399", // Emerald-400
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem", // 12px
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-dark text-text-dark-primary">
+<div class="min-h-screen" id="app">
+<header class="sticky top-0 z-10 bg-background-dark/80 backdrop-blur-sm border-b border-border-dark">
+<nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a class="text-lg font-bold text-text-dark-primary" href="#">Protocol</a>
+<div class="flex items-center space-x-2 sm:space-x-4 text-sm font-medium">
+<a class="text-primary font-semibold" href="#">Add Your Project</a>
+<a class="text-text-dark-secondary hover:text-text-dark-primary transition-colors" href="#">Docs</a>
+</div>
+</nav>
+</header>
+<main class="container mx-auto p-4 sm:p-6">
+<h1 class="text-2xl sm:text-3xl font-bold text-text-dark-primary mb-6">Add Your Project</h1>
+<form class="space-y-6">
+<div class="space-y-4">
+<div>
+<label class="text-sm font-medium text-text-dark-secondary mb-2 block" for="project-name">Project Name</label>
+<input class="w-full bg-card-dark border-border-dark rounded-lg placeholder-text-dark-secondary focus:ring-primary focus:border-primary" id="project-name" placeholder="e.g. Ethereum Foundation" type="text"/>
+</div>
+<div>
+<label class="text-sm font-medium text-text-dark-secondary mb-2 block" for="project-description">Description</label>
+<textarea class="w-full bg-card-dark border-border-dark rounded-lg placeholder-text-dark-secondary focus:ring-primary focus:border-primary" id="project-description" placeholder="A short description of your project" rows="3"></textarea>
+</div>
+</div>
+<fieldset>
+<legend class="text-sm font-medium text-text-dark-secondary mb-3">How do you want your project to operate?</legend>
+<div class="space-y-4">
+<label class="flex items-center p-4 bg-card-dark rounded-lg border-2 border-border-dark has-[:checked]:border-primary transition-colors cursor-pointer">
+<input class="h-5 w-5 text-primary bg-background-dark border-border-dark focus:ring-primary focus:ring-offset-background-dark mr-4" name="project-option" type="radio" value="spending"/>
+<span class="flex-1">
+<span class="font-semibold block text-text-dark-primary">Track Your Protocol Spending</span>
+<span class="text-sm text-text-dark-secondary">Basic tracking of funds and expenses.</span>
+</span>
+<span class="material-symbols-outlined text-text-dark-secondary ml-4">monitoring</span>
+</label>
+<label class="flex items-center p-4 bg-card-dark rounded-lg border-2 border-border-dark has-[:checked]:border-primary transition-colors cursor-pointer">
+<input checked="" class="h-5 w-5 text-primary bg-background-dark border-border-dark focus:ring-primary focus:ring-offset-background-dark mr-4" name="project-option" type="radio" value="tasks"/>
+<span class="flex-1">
+<span class="font-semibold block text-text-dark-primary">Track Your Protocol Spending and Add Tasks for your Community</span>
+<span class="text-sm text-text-dark-secondary">Engage your community with tasks and rewards.</span>
+</span>
+<span class="material-symbols-outlined text-text-dark-secondary ml-4">task_alt</span>
+</label>
+<label class="flex items-center p-4 bg-card-dark rounded-lg border-2 border-border-dark has-[:checked]:border-primary transition-colors cursor-pointer">
+<input class="h-5 w-5 text-primary bg-background-dark border-border-dark focus:ring-primary focus:ring-offset-background-dark mr-4" name="project-option" type="radio" value="yield"/>
+<span class="flex-1">
+<span class="font-semibold block text-text-dark-primary">Track Your Protocol Spending/Task &amp; Earn Yield</span>
+<span class="text-sm text-text-dark-secondary">Maximize your funds by earning yield.</span>
+</span>
+<span class="material-symbols-outlined text-text-dark-secondary ml-4">insights</span>
+</label>
+</div>
+</fieldset>
+<div>
+<button class="w-full bg-primary text-white font-semibold px-4 py-3 rounded-lg hover:opacity-90 transition-opacity" type="submit">
+                    Create Project
+                </button>
+</div>
+</form>
+</main>
+</div>
+
+</body></html>
