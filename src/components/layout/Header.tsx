@@ -48,7 +48,7 @@ export function Header({ showBackButton = false }: HeaderProps) {
 					</a>
 				  
 				</div>
-				    <ConnectButton />
+				   <ConnectButton chainStatus="name" />
 			</nav>
 		</header>
 	);
