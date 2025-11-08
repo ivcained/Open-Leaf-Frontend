@@ -1,6 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import { MaterialIcon } from '../ui/MaterialIcon';
 
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import '@rainbow-me/rainbowkit/styles.css';
+
 interface HeaderProps {
 	showBackButton?: boolean;
 }
@@ -43,10 +46,9 @@ export function Header({ showBackButton = false }: HeaderProps) {
 					>
 						Docs
 					</a>
-					<button className="bg-primary rounded-lg px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90 sm:text-sm">
-						Connect
-					</button>
+				  
 				</div>
+				    <ConnectButton />
 			</nav>
 		</header>
 	);

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/layout/Header';
 import { MaterialIcon } from '../components/ui/MaterialIcon';
-
+import { useAccount } from "wagmi"
 export function AddProject() {
 	const navigate = useNavigate();
 	const [projectName, setProjectName] = useState('');
@@ -16,9 +16,17 @@ export function AddProject() {
 		navigate('/');
 	};
 
+	const { isConnected } = useAccount()
+
 	return (
+		
 		<div className="min-h-screen">
 			<Header />
+			{!isConnected ? ( 
+			          <div className="flex items-center justify-center p-4 md:p-6 xl:p-8">
+                    Please connect a wallet
+					</div>
+					) : (
 			<main className="container mx-auto p-4 sm:p-6">
 				<h1 className="text-text-dark-primary mb-6 text-2xl font-bold sm:text-3xl">
 					Add Your Project
@@ -166,6 +174,7 @@ export function AddProject() {
 					</div>
 				</form>
 			</main>
+					)}
 		</div>
 	);
 }
