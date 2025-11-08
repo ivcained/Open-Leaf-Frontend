@@ -61,8 +61,41 @@ export const mockProjects: Project[] = [
 		currentFunds: '5,800',
 		yieldEarned: '+98.2',
 		openTasks: 12,
-		tasks: [],
-		spendings: [],
+		tasks: [
+			{
+				id: '1',
+				title: 'Optimize rendering engine performance',
+				reward: '2.5',
+			},
+			{
+				id: '2',
+				title: 'Develop distributed computing tutorial',
+				reward: '1.8',
+			},
+			{
+				id: '3',
+				title: 'Create provider onboarding documentation',
+				reward: '1.2',
+			},
+		],
+		spendings: [
+			{
+				id: '1',
+				description: 'Network infrastructure upgrade',
+				amount: '-35',
+				txHash: '0xabc...123',
+				timestamp: '3 days ago',
+				explorerUrl: 'https://etherscan.io',
+			},
+			{
+				id: '2',
+				description: 'Provider incentive program',
+				amount: '-18',
+				txHash: '0xdef...456',
+				timestamp: '1 week ago',
+				explorerUrl: 'https://etherscan.io',
+			},
+		],
 	},
 	{
 		id: '3',
@@ -72,7 +105,48 @@ export const mockProjects: Project[] = [
 		currentFunds: '9,210',
 		yieldEarned: '+204.7',
 		openTasks: 5,
-		tasks: [],
-		spendings: [],
+		tasks: [
+			{
+				id: '1',
+				title: 'Research fraud proof optimization',
+				reward: '4.0',
+			},
+			{
+				id: '2',
+				title: 'Build cross-chain bridge monitoring tool',
+				reward: '3.5',
+			},
+			{
+				id: '3',
+				title: 'Develop Nitro stack documentation',
+				reward: '2.0',
+			},
+		],
+		spendings: [
+			{
+				id: '1',
+				description: 'Sequencer infrastructure costs',
+				amount: '-45',
+				txHash: '0x789...xyz',
+				timestamp: '4 days ago',
+				explorerUrl: 'https://arbiscan.io',
+			},
+			{
+				id: '2',
+				description: 'Ecosystem grant distribution',
+				amount: '-60',
+				txHash: '0x456...789',
+				timestamp: '1 week ago',
+				explorerUrl: 'https://arbiscan.io',
+			},
+			{
+				id: '3',
+				description: 'Security audit funding',
+				amount: '-30',
+				txHash: '0xabc...def',
+				timestamp: '2 weeks ago',
+				explorerUrl: 'https://arbiscan.io',
+			},
+		],
 	},
 ];
