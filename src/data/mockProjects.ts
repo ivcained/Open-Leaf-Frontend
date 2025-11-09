@@ -101,7 +101,7 @@ export const mockProjects: Project[] = [
 		id: '3',
 		name: 'Arbitrum Foundation',
 		description: 'Layer 2 scaling solution.',
-		logo: 'https://blogger.googleusercontent.com/img/a/AVvXsEiC2FBZIS-x3UDUg8v5UrM0svbbXeaoyjmrpBggr1Tkw-t9rXy0AozQSI68ul4asoGCTZ0l0c0Ybbm0zBFxFUIXWl0a-z9a_EVNM1rwXcKwZ0Ar79aeGPOzsyMXov8F7qw9wKdYTUkEq2MuZvGylS98brFwgRjvfyUNWL37kGxD6H07Ib-FsxtwHSUjM9pg=s16000',
+		logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBaxKLwBGrQ4Bd75P_N1R6EG6HeDGqUIfhyCPXDYRwOZcmkiFP4cbNoraTX_VktRVFDJvMytxiPceKFzRpub-1WSnXO4QGQrBVMJ8Tdjo2KTzHuLNimzU6baYSAjip0yuR_GG8iqpVsu_ZAFdvS2c81pzEdrhDUxM2DkkJdFtgvtlvv9r4WUIizAf7xzFhNGLADRe9xMC8QwbEc5CTIEDOd1IS7gssEZqGjEO0_vaX9Yl-NgQlVZJUFo5l3xcqw_xxMVVyPcUnnU74',
 		currentFunds: '9,210',
 		yieldEarned: '+204.7',
 		openTasks: 5,
