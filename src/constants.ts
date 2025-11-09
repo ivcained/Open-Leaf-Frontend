@@ -15,6 +15,11 @@ export const OpenLeaf: ContractsConfig = {
         USDC: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
         SparkUSDCVault: "0x28B3a8fb53B741A8Fd78c0fb9A6B2393d896a43d",
     },
+    1: {
+     Registry: "0x5aAdFB43eF8dAF45DD80F4676345b7676f1D70e3",
+        USDC: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        SparkUSDCVault: "0x28B3a8fb53B741A8Fd78c0fb9A6B2393d896a43d",
+    }
 }
 
 export const RegistryABI = [

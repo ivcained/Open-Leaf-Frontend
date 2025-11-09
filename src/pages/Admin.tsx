@@ -86,11 +86,43 @@ export function Admin() {
 			<Header />
 			<main className="container mx-auto p-4 sm:p-6">
 				<h1 className="text-text-dark-primary mb-6 text-2xl font-bold sm:text-3xl">
-					My Project Task Submissions
+					My Project
 				</h1>
+
+				<div>
+					
+					<h2 className="text-text-dark-primary mt-8 mb-4 text-xl font-bold">
+						Our Tasks
+					</h2>
+					<div className="space-y-4">
+						{previousRequests.map((request) => (
+							<div
+								key={request.id}
+								className="bg-card-dark border-border-dark rounded-lg border p-4"
+							>
+								<div className="flex items-start justify-between">
+									<div>
+										<p className="text-text-dark-primary font-semibold">
+											{request.title}
+										</p>
+										{request.payment && (
+											<p className="text-text-dark-secondary text-sm">
+												Payment: {request.payment}
+											</p>
+										)}
+									</div>
+								
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
 
 				<div className="space-y-6">
 					{/* Pending Submissions */}
+					<h2 className="text-text-dark-primary mt-8 mb-4 text-xl font-bold">
+						Pending Requests
+					</h2>
 					{submissions.map((submission) => (
 						<div
 							key={submission.id}

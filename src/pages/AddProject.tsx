@@ -1,96 +1,114 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Header } from '../components/layout/Header';
-import { useChainId, useConfig, useAccount, useWriteContract } from 'wagmi';
-import { readContract } from '@wagmi/core';
-import { erc20Abi } from 'viem';
-import { OpenLeaf, RegistryABI } from '../constants';
+import { ProjectRegType } from '../utils/types';
+import { approve, createProject, getERC20Balance } from '../utils/Contract';
+import { useConfig, useChainId } from 'wagmi';
+import { useAccount, useWriteContract } from 'wagmi';
 
 import SparkUSDC from '../images/SparkUSDC.svg';
+import { revert } from 'viem/actions';
 
 export function AddProject() {
 	const [projectName, setProjectName] = useState('');
 	const [description, setDescription] = useState('');
-	const [depositAmount, setDepositAmount] = useState(0);
+	const [depositAmount, setDepositAmount] = useState('');
 	const [projectOption, setProjectOption] = useState('tasks');
+	const [balance, setBalance] = useState(0);
 	const [calcReturns, setCalcReturns] = useState(0);
-	const { writeContractAsync } = useWriteContract();
-
-	const chainId = useChainId();
-	const USDC = OpenLeaf[chainId]['USDC'];
-	const Registry = OpenLeaf[chainId]['Registry'];
-	const config = useConfig();
-	const account = useAccount();
 	const { isConnected } = useAccount();
+	const config = useConfig();
+	const chainId = useChainId();
+	const account = useAccount();
+	const button = useRef<HTMLButtonElement>(null);
+	const [error, setError] = useState('');
 
 	useEffect(() => {
-		setCalcReturns((depositAmount / 100) * 4.25);
+		setCalcReturns((Number(depositAmount) / 100) * 4.25);
 	}, [depositAmount]);
 
-	if (!Registry || !USDC) {
-		alert('Please connect to the correct network');
+	useEffect(() => {
+		if (account.address && isConnected) {
+			getBalance();
+		}
+	}, [account.address, chainId, isConnected]);
 
-		return;
-	}
+	// Remove the balance dependency to avoid infinite loop
+	// if (!Registry || !USDC) {
+	// 	alert('Please connect to the correct network');
+
+	// 	return;
+	// }
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 
-		console.log(USDC, Registry);
-		await Approve();
+		const balance = await getBalance();
 
-		if (projectOption === 'spending') {
-			await createProject();
+		console.log(chainId);
+
+		if (Number(depositAmount) > Number(balance)) {
+			setError('You dont have enough USDC');
+			setTimeout(() => {
+				setError('');
+			}, 5000);
+			return;
 		}
+
+		if (Number(depositAmount) > 0) {
+			await Approve();
+		}
+
+		await CreateProject();
 	};
 
-	async function Approve(): Promise<bigint> {
-		// buttonie.current && (buttonie.current.innerText = "Approving..")
+	async function Approve(): Promise<BigInt> {
+		button.current && (button.current.innerText = 'Approving..');
 
-		const response = await readContract(config, {
-			abi: erc20Abi,
-			address: USDC as `0x${string}`,
-			functionName: `allowance`,
-			args: [account.address as `0x${string}`, Registry as `0x${string}`],
-		});
+		// Convert deposit amount to USDC's 6 decimal format (multiply by 1e6)
+		const USDCAmount = Number(depositAmount) * 1e6;
 
-		console.log(response);
+		const result = await approve(config, chainId, account.address as `0x${string}`, USDCAmount);
 
-		if (response > depositAmount) {
-			const difference = response - BigInt(depositAmount);
-			const value = await writeContractAsync({
-				abi: erc20Abi,
-				address: USDC as `0x${string}`,
-				functionName: 'approve',
-				args: [Registry as `0x${string}`, difference],
-			});
-
-			console.log('value', value);
-			console.log(difference);
-		}
-
-		return response;
+		return result;
 	}
 
-	async function createProject(): Promise<boolean> {
+	async function getBalance(): Promise<Number> {
+		const balance = await getERC20Balance(config, chainId, account.address as `0x${string}`);
+
+		// USDC has 6 decimals, so divide by 1e6 to get the actual balance
+		const formattedBalance = Number(balance) / 1e6;
+		setBalance(formattedBalance);
+
+		return formattedBalance;
+	}
+
+	async function CreateProject(): Promise<boolean> {
 		const projectT = projectOption === 'spending';
 
-		const projectReg = {
+		button.current && (button.current.innerText = 'Creating Project..');
+
+		const USDCAmount = BigInt(Number(depositAmount) * 1e6);
+
+		let projectReg: ProjectRegType = {
 			Name: projectName,
 			Description: description,
-			adminAccount: account.address,
-			depositAmount: depositAmount,
-			token: USDC,
+			adminAccount: '',
+			depositAmount: USDCAmount,
+			token: '',
 			vault: projectT,
 			registered: true,
 		};
-		await writeContractAsync({
-			abi: RegistryABI,
-			address: Registry as `0x${string}`,
-			functionName: 'registerAsProject',
-			args: [projectReg],
-		});
 
-		console.log('Project Created!');
+		console.log('First Reg', projectReg);
+
+		await createProject(config, chainId, account.address as `0x${string}`, projectReg);
+
+		button.current && (button.current.innerText = 'Project Created!..');
+
+		setTimeout(() => {
+			button.current && (button.current.innerText = 'Create Project');
+		}, 5000);
+
 		return true;
 	}
 
@@ -229,25 +247,27 @@ export function AddProject() {
 									<div className="mx-auto" style={{ width: 400 }}>
 										<label
 											htmlFor="deposit-name"
-											className="text-text-dark-secondary mb-2 block text-sm font-medium"
+											className="text-text-dark-secondary mb-2 flex justify-between text-sm font-medium"
 										>
-											Amount To Deposit
+											<span>Amount To Deposit</span>
+											<span>{balance} USDC</span>
 										</label>
 										<input
 											type="number"
 											className="placeholder-text-dark-secondary bg-card-dark border-border-dark focus:border-primary focus:ring-primary w-full rounded-lg"
 											id="deposit-amount"
 											value={depositAmount}
-											onChange={(e) =>
-												setDepositAmount(Number(e.target.value))
-											}
+											onChange={(e) => setDepositAmount(e.target.value)}
 											placeholder="100 USDC"
 											required
 										/>
 										Current APY return:{' '}
 										<b style={{ color: '#80d98d' }}>
-											{calcReturns.toFixed(3)} USDC
+											{calcReturns.toFixed(2)} USDC
 										</b>
+										<div>
+											<b style={{ color: 'red' }}>{error}</b>
+										</div>
 									</div>
 								)}
 							</div>
@@ -255,7 +275,10 @@ export function AddProject() {
 
 						<div className="mx-auto" style={{ width: 200 }}>
 							<button
+								id="SubmitButton"
 								type="submit"
+								ref={button}
+								onClick={handleSubmit}
 								className="bg-primary rounded-lg px-4 py-3 font-semibold text-white transition-opacity hover:opacity-90"
 							>
 								Create Project
