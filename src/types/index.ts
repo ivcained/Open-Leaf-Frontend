@@ -16,6 +16,7 @@ export interface Task {
 	id: string;
 	title: string;
 	reward: string;
+	link?: string;
 }
 
 export interface Spending {

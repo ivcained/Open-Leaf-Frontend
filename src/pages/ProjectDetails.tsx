@@ -101,6 +101,11 @@ export function ProjectDetails() {
 								<div
 									key={task.id}
 									className="bg-card-dark border-border-dark hover:border-primary flex cursor-pointer items-center justify-between rounded-lg border p-4 transition-colors"
+									onClick={() => {
+										if (task.link) {
+											window.location.href = task.link;
+										}
+									}}
 								>
 									<div>
 										<p className="text-text-dark-primary font-medium">
