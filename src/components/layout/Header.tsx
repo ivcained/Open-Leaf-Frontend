@@ -28,7 +28,7 @@ export function Header({ showBackButton = false }: HeaderProps) {
 						</button>
 					)}
 					<Link to="/" className="text-text-dark-primary text-lg font-bold">
-						OpenLeaf - Your Gateway to Treasury Transparency.{' '}
+						OpenLeaf{' '}
 					</Link>
 				</div>
 				<div className="flex items-center space-x-2 text-sm font-medium sm:space-x-4">

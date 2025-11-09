@@ -14,7 +14,6 @@ export const mockProjects: Project[] = [
 				id: '1',
 				title: 'Create a video for Ethereum Foundation',
 				reward: '1.5',
-				link: '/html/stitch/create-vid-eth-foundation.html',
 			},
 			{
 				id: '2',
