@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from '../components/layout/Header';
 import { MaterialIcon } from '../components/ui/MaterialIcon';
+import { getVaultBalanceProject } from '../utils/Contract';
+import { useConfig, useChainId } from 'wagmi';
+import { useAccount, useWriteContract } from 'wagmi';
 
 interface TaskSubmission {
 	id: string;
@@ -11,6 +14,26 @@ interface TaskSubmission {
 }
 
 export function Admin() {
+	const { isConnected } = useAccount();
+	const config = useConfig();
+	const chainId = useChainId();
+	const account = useAccount();
+	useEffect(() => {
+		async function fetchVaultBalance() {
+			if (account.address && isConnected) {
+				const number = await getVaultBalanceProject(
+					config,
+					chainId,
+					account.address as `0x${string}`
+				);
+				const formattedBalance = Number(number) / 1e6;
+
+				setVaultBalance(String(formattedBalance));
+			}
+		}
+	}, [account.address, chainId, isConnected]);
+
+	const [VaultBalance, setVaultBalance] = useState('');
 	const [submissions, setSubmissions] = useState<TaskSubmission[]>([
 		{
 			id: '1',
@@ -88,9 +111,44 @@ export function Admin() {
 				<h1 className="text-text-dark-primary mb-6 text-2xl font-bold sm:text-3xl">
 					My Project
 				</h1>
+				{/* Vault Section */}
+				<div className="bg-card-dark border-border-dark mb-8 rounded-lg border p-6">
+					<h2 className="text-text-dark-primary mb-6 text-xl font-bold">
+						Vault Overview
+					</h2>
+
+					<div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+						<div className="bg-background-dark rounded-lg p-4">
+							<p className="text-text-dark-secondary mb-1 text-sm">Total Balance</p>
+							<p className="text-text-dark-primary text-2xl font-bold">
+								{VaultBalance} USDC
+							</p>
+						</div>
+
+						<div className="bg-background-dark rounded-lg p-4">
+							<p className="text-text-dark-secondary mb-1 text-sm">Yield Earned</p>
+							<p className="text-text-dark-primary text-2xl font-bold">0.00USDC</p>
+						</div>
+					</div>
+
+					<div className="flex flex-col gap-3 sm:flex-row">
+						<button
+							onClick={() => console.log('Withdraw Yield')}
+							className="bg-success-dark hover:bg-success-dark/80 flex-1 rounded-lg px-4 py-3 font-semibold text-white transition-colors"
+						>
+							Withdraw Assets & Yield
+						</button>
+
+						<button
+							onClick={() => console.log('Withdraw Assets and Yield')}
+							className="bg-success-dark hover:bg-success-dark/80 flex-1 rounded-lg px-4 py-3 font-semibold text-white transition-colors"
+						>
+							Withdraw Yield Only
+						</button>
+					</div>
+				</div>
 
 				<div>
-					
 					<h2 className="text-text-dark-primary mt-8 mb-4 text-xl font-bold">
 						Our Tasks
 					</h2>
@@ -111,7 +169,6 @@ export function Admin() {
 											</p>
 										)}
 									</div>
-								
 								</div>
 							</div>
 						))}

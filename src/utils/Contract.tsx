@@ -1,6 +1,6 @@
 import { readContract, writeContract, waitForTransactionReceipt, type Config } from '@wagmi/core';
 import { erc20Abi } from 'viem';
-import { OpenLeaf, RegistryABI } from '../constants';
+import { OpenLeaf, RegistryABI, IERC4626ABI } from '../constants';
 import { TaskDetailsType, ProjectRegType } from './types';
 
 // TaskDetails
@@ -122,3 +122,29 @@ export async function getERC20Balance(
 
 	return response;
 }
+
+export async function getVaultBalanceProject(
+	config: Config,
+	chainId: number,
+	accountAddress: `0x${string}`
+): Promise<Number> {
+	const Registry = OpenLeaf[chainId]['Registry'];
+
+	// first get the vault
+	const addressReturn = await readContract(config, {
+		abi: RegistryABI,
+		address: Registry as `0x${string}`,
+		functionName: `getVault`,
+		args: [1],
+	});
+
+	const number = await readContract(config, {
+		abi: IERC4626ABI,
+		address: addressReturn as `0x${string}`,
+		functionName: `totalAssets`,
+	});
+
+	return Number(number);
+}
+
+//

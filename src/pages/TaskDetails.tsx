@@ -65,9 +65,9 @@ export function TaskDetails() {
 					{/* Task Header */}
 					<div className="bg-card-dark border-border-dark rounded-lg border p-5">
 						<h1 className="text-text-dark-primary mb-2 text-2xl font-bold">
-							{taskName}
+							{task.title}
 						</h1>
-						<p className="text-text-dark-secondary text-sm">Posted by {projectName}</p>
+						<p className="text-text-dark-secondary text-sm">Posted by {project.name}</p>
 					</div>
 
 					{/* Task Description */}
@@ -76,7 +76,26 @@ export function TaskDetails() {
 							Task Description
 						</h2>
 						<div className="text-text-dark-secondary prose prose-invert prose-sm max-w-none">
-							{taskDescription}
+							<p>
+								We're looking for a talented video creator to produce a compelling
+								2-3 minute video that explains the core concepts of the Ethereum
+								Foundation's latest grant program. The video should be engaging,
+								informative, and accessible to a wide audience, from developers to
+								newcomers in the crypto space.
+							</p>
+							<p>Key points to cover:</p>
+							<ul>
+								<li>The mission of the Ethereum Foundation.</li>
+								<li>Goals of the new grant program.</li>
+								<li>Who is eligible to apply.</li>
+								<li>How to apply and key deadlines.</li>
+							</ul>
+							<p>
+								The final deliverable should be a high-resolution video file (1080p
+								or 4K) with professional-quality audio and graphics. Feel free to
+								use existing branding assets, which will be provided upon task
+								acceptance.
+							</p>
 						</div>
 					</div>
 
@@ -87,9 +106,7 @@ export function TaskDetails() {
 						</h2>
 						<div className="flex items-center justify-between">
 							<span className="text-text-dark-secondary">Reward</span>
-							<span className="text-success-dark text-lg font-bold">
-								{taskReward} USDC
-							</span>
+							<span className="text-success-dark text-lg font-bold">100 USDC</span>
 						</div>
 					</div>
 
@@ -117,12 +134,30 @@ export function TaskDetails() {
 									required
 								/>
 							</div>
+							<div className="mb-6">
+								<label
+									className="text-text-dark-secondary mb-2 block text-sm font-medium"
+									htmlFor="submission-link"
+								>
+									Submission Description
+								</label>
+								<input
+									className="bg-background-dark border-border-dark focus:ring-primary focus:border-primary text-text-dark-primary w-full rounded-lg border px-3 py-2 placeholder:text-gray-500 focus:ring-2"
+									id="submission-link"
+									name="submission-description"
+									placeholder="https://github.com/..."
+									type="url"
+									value={submissionLink}
+									onChange={(e) => setSubmissionLink(e.target.value)}
+									required
+								/>
+							</div>
 							<div>
 								<label
 									className="text-text-dark-secondary mb-2 block text-sm font-medium"
 									htmlFor="submission-link"
 								>
-									Simple github link as submission
+									Github-link
 								</label>
 								<input
 									className="bg-background-dark border-border-dark focus:ring-primary focus:border-primary text-text-dark-primary w-full rounded-lg border px-3 py-2 placeholder:text-gray-500 focus:ring-2"

@@ -64,7 +64,6 @@ export function AddProject() {
 	async function Approve(): Promise<BigInt> {
 		button.current && (button.current.innerText = 'Approving..');
 
-		// Convert deposit amount to USDC's 6 decimal format (multiply by 1e6)
 		const USDCAmount = Number(depositAmount) * 1e6;
 
 		const result = await approve(config, chainId, account.address as `0x${string}`, USDCAmount);
@@ -75,7 +74,6 @@ export function AddProject() {
 	async function getBalance(): Promise<Number> {
 		const balance = await getERC20Balance(config, chainId, account.address as `0x${string}`);
 
-		// USDC has 6 decimals, so divide by 1e6 to get the actual balance
 		const formattedBalance = Number(balance) / 1e6;
 		setBalance(formattedBalance);
 
