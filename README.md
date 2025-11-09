@@ -1,4 +1,4 @@
-#OpenLeaf
+# OpenLeaf
 
 Create a platform which allows transparency of  project funds while encouraging  incentives to the community which let the project grow in a transparent way.
 
