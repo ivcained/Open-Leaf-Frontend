@@ -21,6 +21,8 @@ export function Header({ showBackButton = false }: HeaderProps) {
 						<button
 							onClick={() => window.history.back()}
 							className="text-text-dark-secondary hover:text-text-dark-primary"
+							aria-label="Go back"
+							title="Go back"
 						>
 							<MaterialIcon name="arrow_back" />
 						</button>

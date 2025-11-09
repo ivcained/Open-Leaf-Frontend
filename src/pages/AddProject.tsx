@@ -1,24 +1,19 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/layout/Header';
-import { useReadContract, useChainId, useConfig, useAccount, useWriteContract } from 'wagmi';
-import { readContract, waitForTransactionReceipt, getBalance } from '@wagmi/core';
+import { useChainId, useConfig, useAccount, useWriteContract } from 'wagmi';
+import { readContract } from '@wagmi/core';
 import { erc20Abi } from 'viem';
 import { OpenLeaf, RegistryABI } from '../constants';
 
 import SparkUSDC from '../images/SparkUSDC.svg';
-import { deposit } from 'viem/zksync';
-import { s } from 'node_modules/react-router/dist/development/index-react-server-client-B0vnxMMk.d.mts';
 
 export function AddProject() {
-	const navigate = useNavigate();
 	const [projectName, setProjectName] = useState('');
 	const [description, setDescription] = useState('');
 	const [depositAmount, setDepositAmount] = useState(0);
 	const [projectOption, setProjectOption] = useState('tasks');
-	const [calcReturns, setCalcReturns] = useState(0)
-	const { data: hash, isPending, writeContractAsync } = useWriteContract();
-	
+	const [calcReturns, setCalcReturns] = useState(0);
+	const { writeContractAsync } = useWriteContract();
 
 	const chainId = useChainId();
 	const USDC = OpenLeaf[chainId]['USDC'];
@@ -27,11 +22,9 @@ export function AddProject() {
 	const account = useAccount();
 	const { isConnected } = useAccount();
 
-
 	useEffect(() => {
-	setCalcReturns((depositAmount  / 100 )* 4.25)
-        
-    }, [depositAmount]);
+		setCalcReturns((depositAmount / 100) * 4.25);
+	}, [depositAmount]);
 
 	if (!Registry || !USDC) {
 		alert('Please connect to the correct network');
@@ -39,20 +32,15 @@ export function AddProject() {
 		return;
 	}
 
-	
-
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 
 		console.log(USDC, Registry);
-		const approve = await Approve();
+		await Approve();
 
-		if (projectOption == 'spending') {
-			const success = await createProject();
+		if (projectOption === 'spending') {
+			await createProject();
 		}
-		// Handle form submission - for now just navigate back
-		// console.log({ projectName, description, projectOption });
-		// navigate('/');
 	};
 
 	async function Approve(): Promise<bigint> {
@@ -83,7 +71,7 @@ export function AddProject() {
 		return response;
 	}
 
-	async function createProject(): Promise<any> {
+	async function createProject(): Promise<boolean> {
 		const projectT = projectOption === 'spending';
 
 		const projectReg = {
@@ -102,7 +90,7 @@ export function AddProject() {
 			args: [projectReg],
 		});
 
-		console.log("Project Created!")
+		console.log('Project Created!');
 		return true;
 	}
 
@@ -221,11 +209,13 @@ export function AddProject() {
 									{projectOption == 'spending'}
 
 									<span className="flex-1">
-										<span className={`block font-semibold ${
-											projectOption === 'spending'
-												? 'text-green-500'
-												: 'text-text-dark-primary'
-										}`}>
+										<span
+											className={`block font-semibold ${
+												projectOption === 'spending'
+													? 'text-green-500'
+													: 'text-text-dark-primary'
+											}`}
+										>
 											Spark USDC Vault
 										</span>
 										<span className="text-text-dark-secondary text-sm">
@@ -248,11 +238,16 @@ export function AddProject() {
 											className="placeholder-text-dark-secondary bg-card-dark border-border-dark focus:border-primary focus:ring-primary w-full rounded-lg"
 											id="deposit-amount"
 											value={depositAmount}
-											onChange={(e) => setDepositAmount(e.target.value)}
+											onChange={(e) =>
+												setDepositAmount(Number(e.target.value))
+											}
 											placeholder="100 USDC"
 											required
 										/>
-										Current APY return: <b style={{color:'#80d98d'}}>{calcReturns.toFixed(3)} USDC</b> 
+										Current APY return:{' '}
+										<b style={{ color: '#80d98d' }}>
+											{calcReturns.toFixed(3)} USDC
+										</b>
 									</div>
 								)}
 							</div>
