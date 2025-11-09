@@ -18,12 +18,12 @@ export function Header({ showBackButton = false }: HeaderProps) {
 			<nav className="container mx-auto flex items-center justify-between px-4 py-4">
 				<div className="flex items-center space-x-4">
 					{showBackButton && (
-						<Link
-							to="/"
-							className="text-text-dark-secondary hover:text-text-dark-primary flex items-center transition-colors"
+						<button
+							onClick={() => window.history.back()}
+							className="text-text-dark-secondary hover:text-text-dark-primary"
 						>
-							<MaterialIcon name="arrow_back_ios" size="md" />
-						</Link>
+							<MaterialIcon name="arrow_back" />
+						</button>
 					)}
 					<Link to="/" className="text-text-dark-primary text-lg font-bold">
 						OpenLeaf - Your Gateway to Treasury Transparency.{' '}
@@ -40,15 +40,24 @@ export function Header({ showBackButton = false }: HeaderProps) {
 					>
 						Add Your Project
 					</Link>
+					<Link
+						to="/admin"
+						className={`hidden transition-colors sm:block ${
+							isActive('/admin')
+								? 'text-primary font-semibold'
+								: 'text-text-dark-secondary hover:text-text-dark-primary'
+						}`}
+					>
+						Admin
+					</Link>
 					<a
 						href="#"
 						className="text-text-dark-secondary hover:text-text-dark-primary hidden transition-colors sm:block"
 					>
 						Docs
 					</a>
-				  
+					<ConnectButton chainStatus="name" />
 				</div>
-				   <ConnectButton chainStatus="name" />
 			</nav>
 		</header>
 	);
