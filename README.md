@@ -36,6 +36,6 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173) to see your app.
 
-For launching your own mainnet fork be sure to checkout our solidity repo: https://github.com/plairfx/OpenLeaf-Octant-Hackathon-Project/tree/dev/solidity
+For launching your own mainnet fork with the website, be sure to checkout our solidity repo: https://github.com/plairfx/OpenLeaf-Octant-Hackathon-Project/tree/dev/solidity
 
 
