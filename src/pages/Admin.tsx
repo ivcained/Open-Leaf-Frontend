@@ -3,7 +3,7 @@ import { Header } from '../components/layout/Header';
 import { MaterialIcon } from '../components/ui/MaterialIcon';
 import { getVaultBalanceProject } from '../utils/Contract';
 import { useConfig, useChainId } from 'wagmi';
-import { useAccount, useWriteContract } from 'wagmi';
+import { useAccount } from 'wagmi';
 
 interface TaskSubmission {
 	id: string;
@@ -31,6 +31,7 @@ export function Admin() {
 				setVaultBalance(String(formattedBalance));
 			}
 		}
+		fetchVaultBalance();
 	}, [account.address, chainId, isConnected]);
 
 	const [VaultBalance, setVaultBalance] = useState('');
